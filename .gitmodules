@@ -16,4 +16,4 @@
 	url = https://github.com/qmk/lufa
 [submodule "layouts/tomoyat1"]
 	path = layouts/tomoyat1
-	url = git@github.com:tomoyat1/ergodox_layout
+	url = git@github.com:tomoyat1/ergodox-keymap
