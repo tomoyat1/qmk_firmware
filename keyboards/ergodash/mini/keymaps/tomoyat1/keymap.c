@@ -122,8 +122,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
         layer_off(_VIM);
       }
+      return false;
+      break;
     case VIM_NRM:
       layer_off(_VIM);
+      return false;
+      break;
     case GO_ERR: 
       if (record->event.pressed) {
         SEND_STRING("if err != nil {");
