@@ -4,7 +4,7 @@
 #include "quantum.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "i2cmaster.h"
+#include "i2c_master.h"
 #include <util/delay.h>
 
 #define CPU_PRESCALE(n) (CLKPR = 0x80, CLKPR = (n))
@@ -23,7 +23,8 @@
 #define OLATA           0x14            // output latch register
 #define OLATB           0x15
 
-extern uint8_t mcp23018_status;
+extern i2c_status_t mcp23018_status;
+#define ERGODOX_EZ_I2C_TIMEOUT 100
 
 void init_ergodox(void);
 void ergodox_blink_all_leds(void);
@@ -105,6 +106,25 @@ inline void ergodox_led_all_set(uint8_t n)
     ergodox_right_led_2_set(n);
     ergodox_right_led_3_set(n);
 }
+
+#ifdef ORYX_CONFIGURATOR
+enum ergodox_ez_keycodes {
+    LED_LEVEL = SAFE_RANGE,
+    TOGGLE_LAYER_COLOR,
+    EZ_SAFE_RANGE,
+};
+#endif
+
+typedef union {
+  uint32_t raw;
+  struct {
+    uint8_t    led_level :3;
+    bool       disable_layer_led   :1;
+    bool       rgb_matrix_enable   :1;
+  };
+} keyboard_config_t;
+
+extern keyboard_config_t keyboard_config;
 
 /*
  *   LEFT HAND: LINES 115-122
