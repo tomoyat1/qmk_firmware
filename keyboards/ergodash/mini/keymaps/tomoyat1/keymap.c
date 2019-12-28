@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
    * | Ctrl |   1  |   2  |   3  |   4  |   5  | TermN|                    | TRNS |   6  |   7  |   8  |    9 |   0  |  F12 |
    * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
-   * | Shift|   6  |   7  |   8  |   9  |   0  | Space|                    | Enter|   N  |   M  |   <  |   >  |   ?  | Shift|
+   * | Shift|   6  |   7  |   8  |   9  |   0  | Space|                    | Enter|BL_TOG|BL_STE|BL_BRG|   >  |   ?  | Shift|
    * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
    * | Ctrl |  GUI |  ALt | EISU |||||||| Lower| Space|Delete|||||||| Bksp | Enter| Raise|||||||| Home |PageDn|PageUp|  End |
    * ,----------------------------------------------------------------------------------------------------------------------.
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT(
     KC_EQL , KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_UNDS,                        KC_PLUS, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  \
     KC_LCTL, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TERMN,                          KC_TRNS, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_F12 , \
-    KC_LSFT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_TRNS,                        KC_TRNS, KC_N,    KC_M,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+    KC_LSFT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_TRNS,                        KC_TRNS, BL_TOGG, BL_INC , BL_DEC , KC_TRNS, KC_TRNS, KC_TRNS, \
     KC_LCTL, KC_LGUI, KC_LALT, EISU,             LOWER,   KC_TRNS, KC_TRNS,       KC_TRNS,KC_TRNS, RAISE,            KC_HOME, KC_PGDN, KC_PGUP, KC_END   \
   ),
 
