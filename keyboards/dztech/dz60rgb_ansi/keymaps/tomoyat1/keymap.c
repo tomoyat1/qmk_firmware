@@ -8,7 +8,7 @@
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
-  VIM_NRM,
+  VIM_INS,
   GO_ERR,
 };
 
@@ -33,30 +33,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [1] = LAYOUT_60_ansi(
         KC_GESC, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
-        _______, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_EQL,  KC_BSLS, KC_7   , KC_8   , KC_9   , KC_PSCR, KC_SLCK, KC_PAUS, RESET,
-        _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_MINS, GO_ERR,  KC_4   , KC_5   , KC_6   , KC_COLN, KC_PGUP,          _______,
-        _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_AMPR, KC_1   , KC_2   , KC_3   , KC_QUES,           KC_MNXT,
+        KC_TRNS, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_EQL,  KC_BSLS, KC_7   , KC_8   , KC_9   , KC_PSCR, KC_SLCK, KC_PAUS, RESET,
+        KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_MINS, GO_ERR,  KC_4   , KC_5   , KC_6   , KC_COLN, KC_PGUP,          _______,
+        KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_GRV,  KC_AMPR, KC_1   , KC_2   , KC_3   , KC_QUES,           KC_MNXT,
         _______, _______, _______,                            _______,                            _______, _______, _______, _______
     ),
     [2] = LAYOUT_60_ansi(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
-        _______, RGB_TOG, _______, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, RGB_MOD, _______, _______, _______, RESET,
-        _______, _______, _______, _______, _______, _______, _______, _______, RGB_SPI, RGB_SPD, _______, _______,          _______,
-        _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        _______, _______, _______,                            _______,                            _______, _______, _______, _______
+        _______, RGB_TOG, _______, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, RESET,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SPI, RGB_SPD, XXXXXXX, XXXXXXX,          XXXXXXX,
+        XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
     ),
     [_VIM] = LAYOUT_60_ansi(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
-        _______, _______, _______, _______, _______, _______, COPY,    UNDO,    VIM_NRM, _______, PASTE,   _______, _______, RESET,
-        _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,          _______,
-        _______,          _______, CUT,     _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,          _______,
-        _______, _______, _______,                            _______,                            _______, _______, _______, _______
+        _______, _______, _______, _______, _______, _______, COPY,    UNDO,    VIM_INS, XXXXXXX, PASTE,   XXXXXXX, XXXXXXX, RESET,
+        _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,          XXXXXXX,
+        _______,          _______, CUT,     _______, _______, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX,          XXXXXXX,
+        _______, _______, _______,                            _______,                            XXXXXXX, XXXXXXX, XXXXXXX, _______
     )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case VIM_NRM:
+    case VIM_INS:
       layer_off(_VIM);
       return false;
       break;
