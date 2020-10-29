@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT(
     KC_TRNS, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_EQUAL,KC_UNDS,                        KC_PLUS, KC_BSLS, KC_7   , KC_8   , KC_9   , KC_F10 , KC_F11 ,  \
     KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_MINUS,KC_TRNS,                        KC_TRNS, GO_ERR , KC_4   , KC_5   , KC_6   , KC_COLN, KC_F12 , \
-    KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, KC_INS ,                        KC_TRNS, KC_AMPR, KC_1   , KC_2   , KC_3   , KC_QUES, KC_TRNS, \
+    KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_GRV,  KC_INS ,                        KC_TRNS, KC_AMPR, KC_1   , KC_2   , KC_3   , KC_QUES, KC_TRNS, \
     KC_TRNS, KC_AMPR, KC_ASTR, KC_TRNS,          LOWER,   KC_TRNS, KC_DEL ,       KC_TRNS,KC_RSFT, RAISE,            KC_HOME, KC_PGDN, KC_PGUP, KC_END   \
     ),
 
