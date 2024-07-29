@@ -31,7 +31,7 @@ AUDIO_ENABLE = no              # Audio output on port C6
 FAUXCLICKY_ENABLE = no         # Use buzzer to emulate clicky switches
 HD44780_ENABLE = no            # Enable support for HD44780 based LCDs
 RGB_MATRIX_ENABLE = yes        # Use RGB matrix
-RGB_MATRIX_DRIVER = IS31FL3733
+RGB_MATRIX_DRIVER = is31fl3733
 NO_USB_STARTUP_CHECK = no      # Disable initialization only when usb is plugged in
 
 TAP_DANCE_ENABLE = yes

@@ -22,22 +22,22 @@ enum tap_dance_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_60_ansi( // default layer
-        KC_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
+        QK_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
         TD(TD_CTL),KC_A,  KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
         KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT,
-        LT(5, KC_CLCK), KC_LGUI, KC_LALT,                            KC_SPC,                      KC_RALT, MO(1),   MO(2),   KC_RCTL
+        LT(5, KC_CAPS), KC_LGUI, KC_LALT,                            KC_SPC,                      KC_RALT, MO(1),   MO(2),   KC_RCTL
     ),
     [1] = LAYOUT_60_ansi( // symbols layer
         TG(3),   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
-        KC_TRNS, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_EQL,  KC_BSLS, KC_7   , KC_8   , KC_9   , KC_PSCR, KC_SLCK, KC_PAUS, KC_INS,
+        KC_TRNS, KC_EXLM, KC_AT  , KC_LCBR, KC_RCBR, KC_EQL,  KC_BSLS, KC_7   , KC_8   , KC_9   , KC_PSCR, KC_SCRL, KC_PAUS, KC_INS,
         KC_TRNS, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_MINS, GO_ERR,  KC_4   , KC_5   , KC_6   , KC_COLN, _______,          _______,
         KC_TRNS, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_GRV,  KC_AMPR, KC_1   , KC_2   , KC_3   , KC_QUES,           _______,
         _______, MO(5),   _______,                            _______,                            _______, _______, _______, _______
     ),
     [2] = LAYOUT_60_ansi( // backlight/media layer
         _______, KC_VOLD, KC_VOLU, KC_MUTE, KC_MPRV, KC_MPLY, KC_MSTP, KC_MNXT, KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,
-        _______, RGB_TOG, _______, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, RESET,
+        _______, RGB_TOG, _______, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, RGB_MOD, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SPI, RGB_SPD, XXXXXXX, XXXXXXX,          _______,
         XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, KC_SLEP
@@ -50,11 +50,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______,                            _______,                            XXXXXXX, XXXXXXX, XXXXXXX, _______
     ),
     [5] = LAYOUT_60_ansi( // Tiling window manager (Amethyst) layer
-        KC_GESC, LSA(KC_1),  LSA(KC_2),  LSA(KC_3),  LSA(KC_4),  LSA(KC_5),  LSA(KC_6),  LSA(KC_7),  LSA(KC_8),    LSA(KC_9),    LSA(KC_0),    KC_MINS, KC_EQL,  KC_BSPC,
+        QK_GESC, LSA(KC_1),  LSA(KC_2),  LSA(KC_3),  LSA(KC_4),  LSA(KC_5),  LSA(KC_6),  LSA(KC_7),  LSA(KC_8),    LSA(KC_9),    LSA(KC_0),    KC_MINS, KC_EQL,  KC_BSPC,
         KC_TAB,  LSA(KC_Q),  LSA(KC_W),  LSA(KC_E),  LSA(KC_R),  LSA(KC_T),  LSA(KC_Y),  LSA(KC_U),  LSA(KC_I),    LSA(KC_O),    LSA(KC_P),    KC_LBRC, KC_RBRC, KC_BSLS,
         KC_LCTL, LSA(KC_A),  LSA(KC_S),  LSA(KC_D),  LSA(KC_F),  LSA(KC_G),  LSA(KC_H),  LSA(KC_J),  LSA(KC_K),    LSA(KC_L),    KC_SCLN,      KC_QUOT,          LSA(KC_ENT),
         MEH(KC_LEFT),        LSA(KC_Z),  LSA(KC_X),  LSA(KC_C),  LSA(KC_V),  LSA(KC_B),  LSA(KC_N),  LSA(KC_M),    LSA(KC_COMM), LSA(KC_DOT),  LSA(KC_SLSH),     MEH(KC_RGHT),
-        KC_CLCK, _______,    _______,                            LSA(KC_SPC),                                                    KC_RALT,      MO(1),   MO(2),   KC_RCTL
+        KC_CAPS, _______,    _______,                            LSA(KC_SPC),                                                    KC_RALT,      MO(1),   MO(2),   KC_RCTL
     )
 };
 
@@ -75,7 +75,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void td_esc(qk_tap_dance_state_t *state, void *user_data) {
+void td_esc(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     SEND_STRING (SS_TAP(X_GRV));
   } else if (state->count == 2) {
@@ -88,7 +88,7 @@ void td_esc(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [TD_ESC] = ACTION_TAP_DANCE_FN (td_esc),
   [TD_CTL] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_LGUI)
 };
